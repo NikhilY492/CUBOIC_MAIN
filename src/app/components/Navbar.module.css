@@ -1,0 +1,235 @@
+/* ============================================
+   Navbar Styles — Sits at Top of Second Section
+   ============================================ */
+
+.navbarWrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 18, 0.88) 0%,
+    rgba(7, 7, 10, 0.94) 100%
+  );
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.09),
+    0 12px 32px -8px rgba(0, 0, 0, 0.75),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle luminous gradient highlight along the bottom edge */
+.navbarWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(142, 219, 0, 0.3) 15%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(0, 229, 255, 0.3) 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  height: 72px;
+  padding: 0 clamp(1.5rem, 3.8vw, 4.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- Left: Brand CUBOIC ---------- */
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  border-radius: 8px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.brandLink:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.brandText {
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: clamp(1.38rem, 1.7vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+  transition: opacity 0.2s ease, text-shadow 0.2s ease;
+}
+
+.brandLink:hover .brandText {
+  opacity: 0.92;
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Center: Navigation Links ---------- */
+.navCenter {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 5px 8px;
+  border-radius: 28px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.navLink {
+  /* Google Labs uses 1.4rem on a 10px base (= 14px) */
+  font: 400 14px / normal "Google Sans", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.navLink:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Right: Unique Unboxed Social Logos ---------- */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.socialLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+}
+
+.socialSvg {
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.socialLink:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.socialLink:hover .socialSvg {
+  transform: scale(1.15);
+}
+
+/* Unique distinctive radiant hover glow for each brand */
+.instagramLink:hover {
+  color: #ff5480;
+  filter: drop-shadow(0 0 12px rgba(255, 84, 128, 0.75));
+}
+
+.linkedinLink:hover {
+  color: #00a0dc;
+  filter: drop-shadow(0 0 12px rgba(0, 160, 220, 0.75));
+}
+
+.socialLink:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* ---------- Mobile Responsiveness ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1.25rem;
+    height: 58px;
+  }
+
+  .navCenter {
+    gap: 0.4rem;
+    padding: 4px 6px;
+  }
+
+  .navLink {
+    font-size: 0.78rem;
+    padding: 6px 10px;
+  }
+
+  .brandText {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .navRight {
+    gap: 0.75rem;
+  }
+
+  .socialLink {
+    padding: 5px;
+  }
+
+  .socialSvg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 540px) {
+  .navbar {
+    padding: 0 1rem;
+    height: 54px;
+  }
+
+  .navCenter {
+    display: none; /* Navigation links hidden on narrow phones — can be toggle menu */
+  }
+
+  .brandText {
+    font-size: 0.92rem;
+    letter-spacing: 0.1em;
+  }
+
+  .navRight {
+    gap: 0.6rem;
+  }
+
+  .socialSvg {
+    width: 17px;
+    height: 17px;
+  }
+}

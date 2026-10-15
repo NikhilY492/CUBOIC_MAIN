@@ -1,0 +1,310 @@
+/* Footer — White background, massive brand wordmark */
+.footer {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  color: #111111;
+  overflow: hidden;
+  z-index: 2;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Top content row */
+.footerInner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5rem 3.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 0.9fr;
+  gap: 3rem;
+}
+
+/* Col 1: Brand description */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brandTagline {
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.copyright {
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: 0.82rem;
+  color: #888888;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Column titles */
+.colTitle {
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #111111;
+  margin: 0 0 1.25rem;
+}
+
+/* Col 2: Explore links */
+.linkCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footerLink {
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555555;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footerLink:hover {
+  color: #111111;
+  transform: translateX(3px);
+}
+
+/* Col 3: Social links */
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444444;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialLink:hover {
+  color: #111111;
+  transform: translateX(3px);
+}
+
+.socialLink svg {
+  flex-shrink: 0;
+}
+
+/* Col 4: CTA cards */
+.ctaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ctaCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ctaTitle {
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ctaSub {
+  font-family: var(--font-oxanium), "Oxanium", sans-serif;
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Massive Brand Wordmark — partially clipped */
+.wordmarkWrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  height: clamp(100px, 18vw, 280px);
+  pointer-events: none;
+  user-select: none;
+  margin-top: 1rem;
+}
+
+.wordmark {
+  font-family: var(--font-montserrat), "Montserrat", Impact, sans-serif;
+  font-size: clamp(4.2rem, 19vw, 24rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #0c0d10;
+  line-height: 0.82;
+  white-space: nowrap;
+  /* Top ~65% visible, bottom clipped */
+  transform: translateY(26%);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .footerInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 4rem 2.5rem 2rem;
+  }
+
+  .wordmarkWrapper {
+    height: clamp(100px, 18vw, 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .footerInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 3.5rem 1.5rem 1.5rem;
+  }
+
+  .brandTagline {
+    font-size: 0.95rem;
+  }
+
+  .colTitle {
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+  }
+
+  .footerLink {
+    font-size: 0.88rem;
+  }
+
+  .socialLink {
+    font-size: 0.88rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.05rem;
+  }
+
+  .ctaSub {
+    font-size: 0.8rem;
+  }
+
+  .ctaCard {
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+  }
+
+  .wordmarkWrapper {
+    height: clamp(80px, 14vw, 160px);
+  }
+
+  .wordmark {
+    font-size: clamp(5rem, 17vw, 14rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 1.25rem 1.25rem;
+  }
+
+  .brandCol {
+    align-items: center;
+    text-align: center;
+  }
+
+  .brandTagline {
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+
+  .linkCol {
+    align-items: center;
+    text-align: center;
+  }
+
+  .colTitle {
+    font-size: 0.78rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .socialList {
+    align-items: center;
+  }
+
+  .ctaCol {
+    align-items: stretch;
+  }
+
+  .ctaCard {
+    align-items: center;
+    text-align: center;
+    padding: 1rem 1rem;
+    border-radius: 12px;
+  }
+
+  .ctaTitle {
+    font-size: 1rem;
+  }
+
+  .ctaSub {
+    font-size: 0.78rem;
+  }
+
+  .wordmarkWrapper {
+    height: clamp(60px, 12vw, 120px);
+  }
+
+  .wordmark {
+    font-size: clamp(4.5rem, 15vw, 10rem);
+  }
+}
